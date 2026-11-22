@@ -161,6 +161,18 @@ The main objective of ReviewLens is to simplify customer feedback analysis and h
 - Product recommendation insights.
 - User authentication and admin panel.
 
+
+## 📸 Application Screenshots
+
+### 1. ReviewLens Dashboard
+![ReviewLens Dashboard](screenshots/dashboard.png)
+
+### 2. Review Charts and Sentiment Analysis
+![Review Charts](screenshots/review_charts.png)
+
+### 3. AI Segment Analysis
+![AI Segment Analysis](screenshots/ai_segment_analysis.png)
+
 ## 👩‍💻 Author
 
 **Gargi Tiwari**
