@@ -1,3 +1,5 @@
 Flask
 pandas
 vaderSentiment
+Flask-Cors
+gunicorn
