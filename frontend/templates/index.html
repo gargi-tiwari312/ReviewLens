@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ReviewLens - AI Review Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h2>🔍 ReviewLens</h2>
+        <p>AI-Powered Customer Review Analysis</p>
+    </header>
+
+
+    <!-- Main Section -->
+    <main>
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+
+            <h1>Understand Your Customer Reviews</h1>
+
+            <p>
+                Upload your review dataset and discover
+                customer opinions using AI.
+            </p>
+
+        </section>
+
+
+        <!-- Upload Section -->
+        <section class="upload-box">
+
+            <h2>Upload Review Dataset</h2>
+
+            <p>
+                Select a CSV file containing customer reviews.
+            </p>
+
+            <input
+                type="file"
+                id="csvFile"
+                accept=".csv"
+            >
+
+            <br><br>
+
+            <button id="uploadBtn">
+                Upload Reviews
+            </button>
+
+            <!-- Upload Result -->
+            <div id="result"></div>
+
+            <hr>
+
+            <!-- Data Cleaning Section -->
+            <h2>Data Cleaning</h2>
+
+            <p>
+                Remove duplicate, missing and empty reviews.
+            </p>
+
+            <button id="cleanBtn">
+                Clean Reviews
+            </button>
+
+            <!-- Cleaning Result -->
+            <div id="cleanResult"></div>
+    
+            <hr>
+
+<h2>AI Sentiment Analysis</h2>
+
+<p>Analyze customer opinions automatically.</p>
+
+<button id="analyzeBtn">
+    Analyze Reviews
+</button>
+
+<div id="analyzeResult"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
+

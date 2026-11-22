@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ReviewLens | Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>ReviewLens</h2>
+
+    <p class="menu-title">MAIN MENU</p>
+
+    <a href="/dashboard" class="active">📊 Dashboard</a>
+    <a href="#upload">📁 Upload Reviews</a>
+    <a href="#products">📦 Products</a>
+
+    <div class="sidebar-bottom">
+        <p>ReviewLens Analytics</p>
+        <small>Review Management System</small>
+    </div>
+</div>
+
+<div class="main-content">
+
+    <header>
+        <div>
+            <h1>Dashboard</h1>
+            <p>Welcome to your ReviewLens analytics dashboard.</p>
+        </div>
+
+        <div class="user-icon">RL</div>
+    </header>
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <p>Total Reviews</p>
+            <h2 id="totalReviews">--</h2>
+            <span>All customer reviews</span>
+        </div>
+
+        <div class="stat-card">
+            <p>Average Rating</p>
+            <h2 id="averageRating">--</h2>
+            <span>Out of 5 stars</span>
+        </div>
+
+        <div class="stat-card">
+            <p>Positive Reviews</p>
+            <h2 id="positiveReviews">--</h2>
+            <span>4 and 5 star reviews</span>
+        </div>
+
+        <div class="stat-card">
+            <p>Negative Reviews</p>
+            <h2 id="negativeReviews">--</h2>
+            <span>1 and 2 star reviews</span>
+        </div>
+
+    </section>
+
+    <section class="charts-grid">
+
+        <div class="chart-card">
+            <h3>Rating Distribution</h3>
+            <p>Customer ratings from 1 to 5 stars</p>
+            <canvas id="ratingChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h3>Sentiment Overview</h3>
+            <p>Positive, negative and neutral reviews</p>
+            <canvas id="sentimentChart"></canvas>
+        </div>
+
+    </section>
+
+    <section class="product-section" id="products">
+
+        <h3>Product-wise Analysis</h3>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Total Reviews</th>
+                        <th>Average Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody id="productTable">
+                    <tr>
+                        <td colspan="3">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+    <!-- REVIEW INSIGHTS SECTION -->
+
+<section class="insights-section" id="insights">
+
+    <h3>Review Insights</h3>
+
+    <p>Automated analysis of customer feedback.</p>
+
+    <div class="insights-summary">
+        <h4>Overall Summary</h4>
+        <p id="insightsSummary">
+            Loading insights...
+        </p>
+    </div>
+
+    <div class="insights-grid">
+
+        <div class="insight-card">
+            <h4>Common Complaints</h4>
+            <ul id="complaintsList">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+        <div class="insight-card">
+            <h4>Appreciated Features</h4>
+            <ul id="featuresList">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="suggestions-card">
+        <h4>Improvement Suggestions</h4>
+        <ul id="suggestionsList">
+            <li>Loading...</li>
+        </ul>
+    </div>
+
+</section>
+
+    <section class="upload-section" id="upload">
+
+        <h3>Upload Review Dataset</h3>
+
+        <p>Upload your customer reviews CSV file.</p>
+
+        <form id="uploadForm">
+
+            <input type="file"
+                   id="csvFile"
+                   accept=".csv"
+                   required>
+
+            <button type="submit">Upload CSV</button>
+
+        </form>
+
+        <p id="uploadMessage"></p>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
